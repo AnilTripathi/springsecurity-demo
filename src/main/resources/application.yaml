@@ -1,0 +1,33 @@
+server:
+  forward-headers-strategy: framework
+  port: 9092
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: springsecurity-demo
+  datasource:
+    url: jdbc:mysql://localhost:3306/springsecurity?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      auto-commit: true
+      connection-timeout: 20000
+      idle-timeout: 30000
+      max-lifetime: 120000
+      maximum-pool-size: 3
+      minimum-idle: 1
+      username: root
+      password: Wellness36@
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: "classpath:/db/db.changelog-master.xml"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+jwt:
+  secret: ${JWT_SECRET:R1BYcTVXVGNDU2JmWHVnZ1lnN0FKeGR3cU1RUU45QXV4SDJONFZ3ckhwS1N0ZjNCYVkzZ0F4RVBSS1UzRENwRw==}
+  expirationms: ${JWT_EXPIRATIONMS:86400000}
