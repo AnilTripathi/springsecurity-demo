@@ -16,7 +16,7 @@ This project demonstrates how to secure a Spring Boot application using Spring S
 - **Spring Boot**: Framework for building Java applications
 - **Spring Security**: Security framework for authentication and authorization
 - **JWT (JSON Web Tokens)**: Token-based authentication
-- **H2 Database**: In-memory database for development and testing
+- **MySql Database**: MySql database for development and testing
 - **Maven**: Build and dependency management
 
 ## Getting Started
